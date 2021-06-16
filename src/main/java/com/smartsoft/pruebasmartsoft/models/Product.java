@@ -1,20 +1,22 @@
-package com.smartsoft.pruebasmartsoft.documents;
-
-import java.io.Serializable;
+package com.smartsoft.pruebasmartsoft.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.mongodb.lang.NonNull;
-
 @Document(collection= "Product")
-public class Product implements Serializable {
+public class Product{
 	@Id
-	@NonNull
 	private String id;
 	private String name;
 	private Double cost;
 	private Integer stock;
+	
+	public Product(String name, Double cost, Integer stock) {
+		super();
+		this.name = name;
+		this.cost = cost;
+		this.stock = stock;
+	}
 	
 	public String getId() {
 		return id;
@@ -40,7 +42,5 @@ public class Product implements Serializable {
 	public void setStock(Integer stock) {
 		this.stock = stock;
 	}
-	
-	
 	
 }

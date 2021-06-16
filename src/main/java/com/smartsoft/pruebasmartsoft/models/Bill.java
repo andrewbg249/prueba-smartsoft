@@ -1,19 +1,21 @@
-package com.smartsoft.pruebasmartsoft.documents;
-
-import java.io.Serializable;
-import java.sql.Date;
+package com.smartsoft.pruebasmartsoft.models;
+import org.springframework.data.annotation.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.mongodb.lang.NonNull;
-
 @Document(collection = "Bill")
-public class Bill implements Serializable {
+public class Bill {
 	
+	@Id
 	private String num_bill;
-	@NonNull
 	private String id_Client;
 	private String date;
+	
+	public Bill(String id_Client, String date) {
+		super();
+		this.id_Client = id_Client;
+		this.date = date;
+	}
 	
 	public String getNum_bill() {
 		return num_bill;

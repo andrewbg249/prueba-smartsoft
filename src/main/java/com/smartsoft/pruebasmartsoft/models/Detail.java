@@ -1,18 +1,25 @@
-package com.smartsoft.pruebasmartsoft.documents;
-
-import java.io.Serializable;
+package com.smartsoft.pruebasmartsoft.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection= "Detail")
-public class Detail implements Serializable{
-
+public class Detail{
+	
+	@Id
 	private String num_detail;
 	private String id_bill;
 	private String id_product;
 	private Integer amount;
 	private Double cost;
+
+	public Detail(String id_bill, String id_product, Integer amount, Double cost) {
+		super();
+		this.id_bill = id_bill;
+		this.id_product = id_product;
+		this.amount = amount;
+		this.cost = cost;
+	}
 	
 	public String getNum_detail() {
 		return num_detail;
@@ -44,6 +51,5 @@ public class Detail implements Serializable{
 	public void setCost(Double cost) {
 		this.cost = cost;
 	}
-	
 	
 }

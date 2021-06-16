@@ -1,24 +1,30 @@
-package com.smartsoft.pruebasmartsoft.documents;
-
-import java.io.Serializable;
-import java.sql.Date;
+package com.smartsoft.pruebasmartsoft.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.mongodb.lang.NonNull;
-
 @Document(collection= "Client")
-public class Client implements Serializable{
+public class Client{
+	
 	@Id
-	@NonNull
 	private String id;
+	
 	private String first_name;
 	private String last_name;
 	private String address;
-	private Date date_birth;
+	private String date_birth;
 	private String phone;
 	private String email;
+	
+	public Client(String first_name, String last_name, String address, String date_birth, String phone, String email) {
+		super();
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.address = address;
+		this.date_birth = date_birth;
+		this.phone = phone;
+		this.email = email;
+	}
 	
 	public String getId() {
 		return id;
@@ -44,10 +50,10 @@ public class Client implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Date getDate_birth() {
+	public String getDate_birth() {
 		return date_birth;
 	}
-	public void setDate_birth(Date date_birth) {
+	public void setDate_birth(String date_birth) {
 		this.date_birth = date_birth;
 	}
 	public String getPhone() {
