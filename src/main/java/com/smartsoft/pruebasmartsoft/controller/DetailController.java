@@ -54,7 +54,7 @@ public class DetailController {
 		}
 	}
 
-	@PostMapping("/detail")
+	@PostMapping("/add-detail")
 	public ResponseEntity<Detail> createDetail(@RequestBody Detail detail) {
 		try {
 			Detail _detail = detailRepository.save(

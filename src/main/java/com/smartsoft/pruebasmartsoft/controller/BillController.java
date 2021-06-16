@@ -19,7 +19,7 @@ import com.smartsoft.pruebasmartsoft.models.Bill;
 import com.smartsoft.pruebasmartsoft.repository.BillRepository;
 
 @RestController
-@RequestMapping("/bill")
+@RequestMapping("/api")
 public class BillController {
 
 	@Autowired
@@ -54,7 +54,7 @@ public class BillController {
 		}
 	}
 
-	@PostMapping("/bill")
+	@PostMapping("/add-bill")
 	public ResponseEntity<Bill> createBill(@RequestBody Bill bill) {
 		try {
 			Bill _bill = billRepository.save(new Bill(bill.getId_Client(), bill.getDate()));

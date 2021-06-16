@@ -7,7 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Bill {
 	
 	@Id
-	private String num_bill;
+	private String id;
+	
 	private String id_Client;
 	private String date;
 	
@@ -18,10 +19,10 @@ public class Bill {
 	}
 	
 	public String getNum_bill() {
-		return num_bill;
+		return id;
 	}
 	public void setNum_bill(String num_bill) {
-		this.num_bill = num_bill;
+		this.id = num_bill;
 	}
 	public String getId_Client() {
 		return id_Client;

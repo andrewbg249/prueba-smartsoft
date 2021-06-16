@@ -54,7 +54,7 @@ public class ClientController {
 		}
 	}
 
-	@PostMapping("/client")
+	@PostMapping("/add-client")
 	public ResponseEntity<Client> createClient(@RequestBody Client client) {
 		try {
 			Client _client = clientRepository.save(new Client(client.getFirst_name(), client.getLast_name(),
